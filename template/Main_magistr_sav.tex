@@ -1,0 +1,40 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Основной файл (скелет) курсовой работы.
+% Сюда включаются преамбула и все главы.
+%
+% Текст, формулы, рисунки, таблица и литературные
+% ссылки абсолютно не связаны друг с другом!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{preamble}
+
+\begin{document}
+\large
+
+  \include{title}  % Титульный лист
+  \newpage \pagestyle{empty} % нумерация выкл.
+  \mbox{} \newpage \ \pagestyle{plain}
+  \setcounter{page}{3}\pagestyle{myheadings}
+  \tableofcontents % Генерация оглавления
+%  \include{intro1}  % Введение
+  \include{intro2}  % Введение
+  \include{ch_1_1}   % Глава 1
+  \include{ch_1_2}   % Глава 2
+%  \include{ch_1_22}   % Глава 3
+  \include{ch_2_1}   % Глава 1
+  \include{ch_2_2}   % Глава 2
+  \include{ch_2_3}   % Глава 2
+%  \include{ch_2_4}   % Глава 2
+  \include{ch_3_1}   % Глава 3
+  \include{ch_3_2}   % Глава 3
+  \include{ch_3_3}   % Глава 3
+  \include{ch_3_3_1}
+  \include{fin}    % Заключение
+%  \include{app2}   % Приложение B
+  \include{liter}  % Список литературы
+  \include{app1}   % Приложение А
+%%  \include{chpt_6_1}
+
+\end{document}
