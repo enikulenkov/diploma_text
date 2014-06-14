@@ -1,9 +1,10 @@
 MAIN_FILE=Main_magistr_sav
-all: clean linalg-2014.pdf
+all: clean main.pdf
 
-linalg-2014.pdf :
+main.pdf :
 	pdflatex $(MAIN_FILE).tex
-	#bibtex $(MAIN_FILE).aux
+	#bibtex8 -B $(MAIN_FILE).aux
+	bibtex $(MAIN_FILE).aux
 	pdflatex $(MAIN_FILE).tex
 
 clean:
