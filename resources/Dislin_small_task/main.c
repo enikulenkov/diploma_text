@@ -33,6 +33,8 @@
 #define ARRAY_SIZE(a) (sizeof(a)/sizeof(a[0]))
 #define POINTS_NUM 6194
 
+/*#define LOGARIPHMIC_Y*/
+
 typedef struct point3D_s
 {
   float x;
@@ -6274,10 +6276,12 @@ void dislin_init()
   angle(90);
   /*texmod("off");*/
 
+#ifdef LOGARIPHMIC_Y
   labels("FEXP", "y");
-  labdig(-1,"x");
   labdig(1,"y");
   axsscl("LOG", "y");
+#endif
+  labdig(-1,"x");
 }
 
 void dislin_deinit()
@@ -6296,8 +6300,14 @@ void dislin_draw()
   }
 
   Lx1=0;Lx2=POINTS_NUM;
+
+
+#ifdef LOGARIPHMIC_Y
   Ly1=-8;Ly2=log10(2);Ly=Ly2-Ly1;
   neglog(1e-9);
+#else
+  Ly1=0;Ly2=2;Ly=Ly2-Ly1;
+#endif
 
   graf(Lx1,Lx2,Lx1,1000,Ly1,Ly2,Ly1,Ly/10);
 
