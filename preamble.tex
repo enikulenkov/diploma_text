@@ -8,6 +8,13 @@
 %\usepackage[cp1251]{inputenc}       % кодировка (обязательно!)
 \usepackage[utf8]{inputenc}
 \usepackage[russian]{babel} % Система переносов (обязательно!)
+\usepackage[backend=biber,
+  language=auto,
+  babel=other,
+  citestyle=gost-numeric,
+  bibstyle=gost-numeric,
+]
+{biblatex}
 
 \usepackage{amsmath,amssymb}
 %\usepackage{mathtext}    % если нужны русские буквы в формулах
@@ -15,7 +22,7 @@
 \usepackage{graphicx}    % пакет для включения рисунков
 \usepackage{geometry}
 \usepackage{indentfirst} % отступ в первом абзаце раздела
-\usepackage{cite}        % cite.sty (ссылки на литературу в виде [1-5,9])
+%\usepackage{cite}        % cite.sty (ссылки на литературу в виде [1-5,9])
 \usepackage[centerlast,large]{caption2}
 \usepackage{multirow}
 \usepackage{fancyhdr}
