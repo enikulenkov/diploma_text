@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="12.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>180</x>
+      <y>30</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>pagmo::algorithm::base
+--
+-m_drng: rng_double
+--
++evolve (population &amp;p)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>250</x>
+      <y>70</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>150</x>
+      <y>160</y>
+      <w>260</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>pagmo::algorithm::birmingham_ga
+--
+-m_gen: int
+-m_crossover_rate: double
+-m_mutation_rate: double
+-m_elitism: int
+-m_mutations: mutation[]
+-m_selection_type: int
+-m_crossover_type: int
+-m_max_coord: double
+-m_min_atom_dist: double
+--
++randomize_cluster(decision_vector &amp;x)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>250</x>
+      <y>310</y>
+      <w>50</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;90</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>170</x>
+      <y>400</y>
+      <w>210</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>mutation
+--
+-type: int
+-probability: double
+--
++mutation(int type, double prob)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>20</y>
+      <w>310</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>pagmo::population
+--
+-problem: problem::base
+--
++population(problem::base &amp;problem, int count)
++get_individual(int idx) : individual_type
++get_best_idx(): int
++get_worst_idx(): int
++get_problem(): problem::base</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>230</y>
+      <w>320</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>pagmo::problem::base
+--
+-m_dimension: int
+-m_best_x: double[]
+-m_best_f: double[]
+-m_lower_bound: double[]
+-m_upper_bound: double[]
+--
++set_bounds(double lower, double upper)
++objfun(double[] decision_vector)
++compare_fitness(double[] fit1, double[] fit2): bool
++get_best_x(): double[]
++get_best_f(): double[]
++d_objfun(double vec[], int vec_size, double df[])
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Class</type>
+    <coordinates>
+      <x>510</x>
+      <y>470</y>
+      <w>320</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>pagmo::problem::sutton_chen_pot
+--
+--
++objfun(double[] decision_vector)
++d_objfun(double vec[], double df[])
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>640</x>
+      <y>390</y>
+      <w>50</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>30;30;30;80</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>530</x>
+      <y>110</y>
+      <w>262</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1= 1
+m2=  1
+состоит из возможных решений</panel_attributes>
+    <additional_attributes>140;30;140;120</additional_attributes>
+  </element>
+  <element>
+    <type>com.umlet.element.Relation</type>
+    <coordinates>
+      <x>360</x>
+      <y>20</y>
+      <w>170</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+m1=1
+m2=  *
+Итерационно
+улучшает</panel_attributes>
+    <additional_attributes>30;50;150;50</additional_attributes>
+  </element>
+</diagram>
