@@ -21,7 +21,17 @@
   \right .
 \end{equation}
 
-Требуется найти: $\max\limits_{x_{1}, x_{2}} f(x_1, x_2)$
+Требуется найти: $\max\limits_{x_{1}, x_{2}} f(x_1, x_2)$.
+
+График функции $f(x)$ изображен на рис.~\ref{gen_example_pic}.
+
+\begin{figure}[ht!]
+\centering
+  \includegraphics[trim=30 100 30 330, clip, width=0.8\textwidth]{./FIGs/gen_example.pdf}
+\caption{График целевой функции}
+\label{gen_example_pic}
+\end{figure}
+
 
 В предложенной реализации оптимизируемые параметры закодированы в виде двоичных строк. Длина строки
 зависит от требуемой точности. Например, пусть переменная $x_{j}$ имеет интервал изменения $[a_j, b_j]$,
